@@ -64,27 +64,27 @@ public class MainActivity extends AppCompatActivity {
 
         mStartDateCalendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1,
-                                            int i2) {
-                mStartDateTxt = i + "-" + i1 + "-" + i2;
-                mChooseStartDate.setText(getResources().getText(R.string.title_date_begin).toString() + mStartDateTxt);
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month,
+                                            int dayOfMonth) {
+                mStartDateTxt = year + "-" + month + "-" + dayOfMonth;
+                mChooseStartDate.setText(getString(R.string.title_date_begin,mStartDateTxt));
                 GregorianCalendar gregorianCalendar = new GregorianCalendar();
-                gregorianCalendar.set(i, i1, i2);
+                gregorianCalendar.set(year, month, dayOfMonth);
                 mStartDate = gregorianCalendar.getTimeInMillis();
-                calendarView.setVisibility(View.GONE);
+                view.setVisibility(View.GONE);
             }
         });
 
         mEndtDateCalendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1,
-                                            int i2) {
-                mEndDateTxt = i + "-" + i1 + "-" + i2;
-                mChooseEndDate.setText(getResources().getText(R.string.title_date_end).toString() + mEndDateTxt);
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month,
+                                            int dayOfMonth) {
+                mEndDateTxt = year + "-" + month + "-" + dayOfMonth;
+                mChooseEndDate.setText(getString(R.string.title_date_end, mEndDateTxt));
                 GregorianCalendar gregorianCalendar = new GregorianCalendar();
-                gregorianCalendar.set(i, i1, i2);
+                gregorianCalendar.set(year, month, dayOfMonth);
                 mEndDate = gregorianCalendar.getTimeInMillis();
-                calendarView.setVisibility(View.GONE);
+                view.setVisibility(View.GONE);
             }
         });
 
@@ -92,13 +92,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (mStartDate > mEndDate) {
-                    Toast.makeText(MainActivity.this, "Ошибка",
+                    Toast.makeText(MainActivity.this,getString(R.string.err),
                             Toast.LENGTH_LONG).show();
-                    mChooseStartDate.setText(R.string.title_date_begin);
+                    mChooseStartDate.setText(R.string.title_date_begin_empty);
                     mChooseEndDate.setText(R.string.title_date_end);
                 } else {
-                    Toast.makeText(MainActivity.this, "старт: " + mStartDateTxt +
-                            " окончаниe: " + mEndDateTxt, Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,
+                            getString(R.string.toast_msg,mStartDateTxt, mEndDateTxt),
+                            Toast.LENGTH_LONG).show();
                 }
             }
         });

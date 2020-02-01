@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">TaskTime</string>
-    <string name="title_date_begin">Дата начала задачи:</string>
-    <string name="title_date_end">Дата окончания задачи:</string>
+    <string name="ok_but">OK</string>
+    <string name="title_date_begin">Дата начала задачи: %1$s</string>
+    <string name="title_date_end">Дата окончания задачи: %1$s</string>
+    <string name="title_date_begin_empty">Дата начала задачи:</string>
+    <string name="title_date_end_empty">Дата окончания задачи:</string>
+    <string name="err">Ошибка</string>
+    <string name="toast_msg">старт:  %1$s, окончаниe: %2$s</string>
 </resources>

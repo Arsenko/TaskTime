@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
+    android:gravity="start"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,16 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:gravity="left|center_vertical"
-        android:text="@string/title_date_begin" />
+        android:gravity="start"
+        android:text="@string/title_date_begin_empty" />
 
     <Button
         android:id="@+id/chooseEndDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:gravity="left|center_vertical"
-        android:text="@string/title_date_end" />
+        android:gravity="start"
+        android:text="@string/title_date_end_empty" />
 
     <CalendarView
         android:id="@+id/startDateCalendar"
