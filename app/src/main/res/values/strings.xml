@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TaskTime</string>
+    <string name="title_date_begin">Дата начала задачи:</string>
+    <string name="title_date_end">Дата окончания задачи:</string>
+</resources>
